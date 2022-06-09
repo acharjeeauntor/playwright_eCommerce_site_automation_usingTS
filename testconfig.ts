@@ -1,4 +1,4 @@
 export let testconfig={
-    funtional:`https://rahulshettyacademy.com/client/`,
+    functional:`https://rahulshettyacademy.com/client/`,
     waitForElement:120000
 }

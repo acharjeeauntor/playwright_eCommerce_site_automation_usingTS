@@ -1,5 +1,5 @@
 // @ts-check
-import { devices, PlaywrightTestConfig } from '@playwright/test'
+import { PlaywrightTestConfig } from '@playwright/test'
 import { testconfig } from './testconfig';
 const ENV = process.env.ENV
 
@@ -41,11 +41,11 @@ const config: PlaywrightTestConfig = {
   projects: [
    
     {
-      name: `Firefox`,
+      name: `chrome`,
       use: {
-        browserName: `firefox`,
+        browserName: `chromium`,
         baseURL: testconfig[process.env.ENV],
-        headless: true,
+        headless: !true,
         viewport: { width: 1500, height: 730 },
         ignoreHTTPSErrors: true,
         acceptDownloads: true,
