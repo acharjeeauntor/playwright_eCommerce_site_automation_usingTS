@@ -46,7 +46,7 @@ const config: PlaywrightTestConfig = {
         browserName: `chromium`,
         baseURL: testConfig[process.env.ENV],
         headless: !true,
-        viewport: { width: 1500, height: 730 },
+        viewport: { width: 1000, height: 650 },
         ignoreHTTPSErrors: true,
         acceptDownloads: true,
         screenshot: `only-on-failure`,
