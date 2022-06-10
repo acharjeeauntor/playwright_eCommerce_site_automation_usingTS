@@ -1,6 +1,6 @@
 // @ts-check
 import { PlaywrightTestConfig } from '@playwright/test'
-import { testconfig } from './testconfig';
+import { testConfig } from './testConfig';
 const ENV = process.env.ENV
 
 if (!ENV || ![`functional`,`api`].includes(ENV)) {
@@ -30,7 +30,7 @@ const config: PlaywrightTestConfig = {
   timeout: 120000,
 
   //number of retries if test case fails
-  retries: 1,
+  retries: 0,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 
@@ -44,7 +44,7 @@ const config: PlaywrightTestConfig = {
       name: `chrome`,
       use: {
         browserName: `chromium`,
-        baseURL: testconfig[process.env.ENV],
+        baseURL: testConfig[process.env.ENV],
         headless: !true,
         viewport: { width: 1500, height: 730 },
         ignoreHTTPSErrors: true,

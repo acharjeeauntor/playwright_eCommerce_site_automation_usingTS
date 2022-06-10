@@ -18,6 +18,10 @@ export class WebActions {
         await this.page.click(selector)
     }
 
+    async navigateToURL(url: string): Promise<void> {
+        await this.page.goto(url);
+    }
+
 
 
 }

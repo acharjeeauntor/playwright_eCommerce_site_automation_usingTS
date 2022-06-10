@@ -18,5 +18,9 @@ export class LoginPage {
         await webActions.clickElement(loginPageObjects.Register_Btn_Selector)
     }
 
+    async goToLoginPage(url: string): Promise<void> {
+        await webActions.navigateToURL(url)
+    }
+
 
 }
