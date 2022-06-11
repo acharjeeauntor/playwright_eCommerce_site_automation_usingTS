@@ -26,7 +26,7 @@ export class RegisterPage {
     }
 
     async enterPhoneNumber(phone: string): Promise<void> {
-        await webActions.fillInputField(registerPageObjects.PhoneNumber_Input_Selector, phone)
+        await webActions.fillInputField(registerPageObjects.PhoneNumber_Input_Selector,phone)
     }
     async SelectOccupation(label: string): Promise<void> {
         await webActions.selectDropDownByLabel(registerPageObjects.Occupation_DropDown_Selector, label)
@@ -57,20 +57,42 @@ export class RegisterPage {
     }
 
     async getFirstNamePlaceholder(): Promise<string> {
-        return await webActions.getAttributeValue(registerPageObjects.FirstName_Input_Selector,"placeholder")
+        return await webActions.getAttributeValue(registerPageObjects.FirstName_Input_Selector, "placeholder")
     }
 
-    // async getLastNamePlaceholder(): Promise<string> {
-    //     await webActions.fillInputField(registerPageObjects.LastName_Input_Selector, LName)
-    // }
+    async getLastNamePlaceholder(): Promise<string> {
+        return await webActions.getAttributeValue(registerPageObjects.LastName_Input_Selector, "placeholder")
+    }
 
-    // async getEmailPlaceholder(): Promise<string> {
-    //     await webActions.fillInputField(registerPageObjects.Email_Input_Selector, email)
-    // }
+    async getEmailPlaceholder(): Promise<string> {
+        return await webActions.getAttributeValue(registerPageObjects.Email_Input_Selector, "placeholder")
+    }
 
-    // async getPhoneNumberPlaceholder(): Promise<string> {
-    //     await webActions.fillInputField(registerPageObjects.PhoneNumber_Input_Selector, phone)
-    // }
+
+    async getPhoneNumberPlaceholder(): Promise<string> {
+        return await webActions.getAttributeValue(registerPageObjects.PhoneNumber_Input_Selector, "placeholder")
+    }
+
+    async getPasswordPlaceholder(): Promise<string> {
+        return await webActions.getAttributeValue(registerPageObjects.Password_Input_Selector, "placeholder")
+    }
+
+
+    async getConfirmPassPlaceholder(): Promise<string> {
+        return await webActions.getAttributeValue(registerPageObjects.ConfirmPassword_Input_Selector, "placeholder")
+    }
+
+    async getRequiredFieldErrorMessages(): Promise<any[]> {
+        return await this.page.locator(registerPageObjects.Required_Fields_ErrorMsg_Selector).allTextContents()
+    }
+
+    async getRequiredCheckboxErrorMessages(): Promise<string> {
+        return await this.page.locator(registerPageObjects.Checkbox_Required_ErrorMsg_Selector).textContent()
+    }
+
+    async getErrorOrSuccessToastMsg(): Promise<string> {
+        return await webActions.getElementText(registerPageObjects.ErrorMsg_Toast_Selector)
+    }
 
 
 

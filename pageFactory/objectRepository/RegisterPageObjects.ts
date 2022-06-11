@@ -9,5 +9,7 @@ export class RegisterPageObjects {
     Occupation_DropDown_Selector = `[formcontrolname='occupation']`
     Required_Checkbox_Selector = `[formcontrolname='required']`
     Register_Btn_Selector = `#login`
-    
+    Required_Fields_ErrorMsg_Selector=`.invalid-feedback`
+    Checkbox_Required_ErrorMsg_Selector=`text=*Please check above checkbox`
+    ErrorMsg_Toast_Selector=`#toast-container`
 }

@@ -20,6 +20,7 @@ const config: PlaywrightTestConfig = {
      */
     timeout: 20000
   },
+  //fullyParallel:true,
   //Global Setup to run before all tests
   //globalSetup: `./global-setup`,
 
@@ -30,7 +31,7 @@ const config: PlaywrightTestConfig = {
   timeout: 120000,
 
   //number of retries if test case fails
-  retries: 0,
+  retries: 1,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 

@@ -49,5 +49,9 @@ export class WebActions {
     return await this.page.getAttribute(selector,attributeName)
    }
 
+   async getElementText(selector: string): Promise<string> {
+  return await this.page.textContent(selector);
+    
+}
 
 }
