@@ -56,6 +56,22 @@ export class RegisterPage {
         await webActions.clickElement(registerPageObjects.Register_Btn_Selector)
     }
 
+    async getFirstNamePlaceholder(): Promise<string> {
+        return await webActions.getAttributeValue(registerPageObjects.FirstName_Input_Selector,"placeholder")
+    }
+
+    // async getLastNamePlaceholder(): Promise<string> {
+    //     await webActions.fillInputField(registerPageObjects.LastName_Input_Selector, LName)
+    // }
+
+    // async getEmailPlaceholder(): Promise<string> {
+    //     await webActions.fillInputField(registerPageObjects.Email_Input_Selector, email)
+    // }
+
+    // async getPhoneNumberPlaceholder(): Promise<string> {
+    //     await webActions.fillInputField(registerPageObjects.PhoneNumber_Input_Selector, phone)
+    // }
+
 
 
 

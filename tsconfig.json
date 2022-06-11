@@ -14,7 +14,7 @@
                 "lib/*"
             ],
             "@data/*": [
-                "test-data/*"
+                "testData/*"
             ],
         }
     }

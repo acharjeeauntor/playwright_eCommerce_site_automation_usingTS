@@ -45,5 +45,9 @@ export class WebActions {
         return this.page.uncheck(selector);
     }
 
+   async getAttributeValue(selector:string,attributeName:string):Promise<string>{
+    return await this.page.getAttribute(selector,attributeName)
+   }
+
 
 }
