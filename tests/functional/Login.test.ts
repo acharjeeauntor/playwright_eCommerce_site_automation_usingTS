@@ -15,7 +15,7 @@ test.describe("Login Feature Test",async()=>{
         await loginPage.enterPassword(LoginData.ValidLoginData.Password)
         await loginPage.clickLoginBtn()
         await loginPage.page.waitForNavigation()
-        expect(await loginPage.getRequiredFieldErrorMessages()).toContain(LoginData.LoginSuccessMessage)
+        expect(await loginPage.getErrorOrSuccessToastMsg()).toContain(LoginData.LoginSuccessMessage)
     
     })
 

@@ -47,4 +47,7 @@ export class LoginPage {
     async getErrorOrSuccessToastMsg(): Promise<string> {
         return await webActions.getElementText(loginPageObjects.ErrorMsg_Toast_Selector)
     }
+    async clickForgetPassLink(): Promise<void> {
+        await webActions.clickElement(loginPageObjects.ForgetPass_Link_Selector)
+    }
 }
