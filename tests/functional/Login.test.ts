@@ -33,7 +33,7 @@ test.describe("Login Feature Test",async()=>{
     
     })
     
-    test('Verify invalid email validation', async ({ loginPage }) => {
+    test('Verify invalid email and confirm password message', async ({ loginPage }) => {
         await loginPage.enterEmail(LoginData.InvalidEmail)
         await loginPage.enterPassword(LoginData.ValidLoginData.Password)
         await loginPage.clickLoginBtn()

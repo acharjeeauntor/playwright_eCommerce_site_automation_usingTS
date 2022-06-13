@@ -1,0 +1,21 @@
+{
+    "RequiredFieldsErrorMsg": [
+        "*Email is required",
+        "*Password is required",
+        "*Confirm Password is required"
+    ],
+    "InvalidEmailPasswordErrorMsg": [
+        "*Enter Valid Email",
+        "Password and Confirm Password must match with each other."
+    ],
+    "InvalidData": {
+        "Email": "exampl",
+        "Password": "Aa@12345",
+        "ConfirmPassword": "Aa2345"
+    },
+    "PlaceholderData": {
+        "Email": "Enter your email address",
+        "Password": "Passsword",
+        "ConfirmPassword": "Confirm Passsword"
+    }
+}
