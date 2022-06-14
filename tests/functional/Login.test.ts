@@ -1,6 +1,6 @@
 import test from "@lib/BaseTest"
 import {expect} from "@playwright/test"
-import LoginData from "@data/loginData.json"
+import LoginData from "@data/LoginData.json"
 
 test.describe("Login Feature Test",async()=>{
 
@@ -9,7 +9,7 @@ test.describe("Login Feature Test",async()=>{
     })
 
 
-    test('Verify user can login to the application using valid credential', async ({ loginPage }) => {
+    test.only('Verify user can login to the application using valid credential', async ({ loginPage }) => {
        
         await loginPage.enterEmail(LoginData.ValidLoginData.Email)
         await loginPage.enterPassword(LoginData.ValidLoginData.Password)

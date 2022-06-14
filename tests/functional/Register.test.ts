@@ -1,5 +1,5 @@
 import test from "@lib/BaseTest"
-import RegisterData from "@data/registerData.json"
+import RegisterData from "@data/RegisterData.json"
 import { expect } from "@playwright/test"
 
 
