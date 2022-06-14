@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test Login.test.ts --project=chrome",
+    "test": "npx playwright test Home.test.ts --project=chrome",
     "debug": "npx playwright test --debug"
   },
   "keywords": [],

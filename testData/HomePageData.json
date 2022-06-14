@@ -1,0 +1,11 @@
+{
+    "ValidProductName": "iphone",
+    "InvalidProductName": [
+        {
+            "Product": "sihdgjd433434@##$#"
+        },
+        {
+            "Product": "    "
+        }
+    ]
+}
