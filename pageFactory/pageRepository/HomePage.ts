@@ -25,4 +25,17 @@ export class HomePage {
         await this.page.keyboard.press("Enter")
     }
 
+    async getErrorToastMsg(): Promise<string> {
+        return (await webActions.getElementText(homePageObjects.ErrorMsg_Toast_Selector)).trim()
+      
+    }
+
+    async getProductName(): Promise<string> {
+        return await webActions.getElementText(homePageObjects.Product_Name_Selector)
+    }
+
+    async getRangeProductName(): Promise<string> {
+        return (await webActions.getLastElementText(homePageObjects.Product_Name_Selector)).toLowerCase().trim()
+    }
+
 }

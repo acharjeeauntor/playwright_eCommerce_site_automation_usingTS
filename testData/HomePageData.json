@@ -1,5 +1,6 @@
 {
     "ValidProductName": "iphone",
+    "ValidRangeProductName":"adidas original",
     "InvalidProductName": [
         {
             "Product": "sihdgjd433434@##$#"
@@ -15,5 +16,6 @@
     "InvalidPriceRange":{
         "Mini":"00",
         "Max":"0000"
-    }
+    },
+    "ErrorMessage":"No Products Found"
 }

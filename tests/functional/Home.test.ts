@@ -1,7 +1,7 @@
 import test from "@lib/BaseTest"
 import { HomePage } from "@pages/HomePage"
-import { request } from "@playwright/test"
 import HomeData from "@data/HomePageData.json"
+import {expect,request} from "@playwright/test"
 
 const loginPayload = {
     userEmail: "anshika@gmail.com", userPassword: "Iamking@000"
@@ -28,20 +28,29 @@ test.describe("Test Home page features", async () => {
 
     test("Verify Filter Search input is working properly or not for valid data", async ({ homePage }) => {
         await homePage.searchProduct(HomeData.ValidProductName)
-
+        let product =await homePage.getProductName()
+        console.log(product)
+        expect(product.toLowerCase()).toContain(HomeData.ValidProductName)
     })
 
-    for (const data of HomeData.InvalidProductName)
-        test(`Verify Filter Search input is working properly or not for ${data.Product} product name`, async ({ homePage }) => {
+    for (const data of HomeData.InvalidProductName){
+        test(`Verify Filter Search input is working properly or not for invalid ${data.Product} data`, async ({ homePage }) => {
             await homePage.searchProduct(data.Product)
+            expect(await homePage.getErrorToastMsg()).toBe(HomeData.ErrorMessage)
         })
+    }
 
-    test("Verify Price Range is working properly or not for valid data", async ({ homePage }) => {
+
+    test.only("Verify Price Range is working properly or not for valid data", async ({ homePage }) => {
         await homePage.setMinimumAndMaxPriceRange(HomeData.ValidPriceRange.Mini, HomeData.ValidPriceRange.Max)
+        //console.log(await homePage.getRangeProductName())
+        expect(await homePage.getRangeProductName()).toContain(HomeData.ValidRangeProductName)
+      
     })
 
     test("Verify Price Range is working properly or not for invalid data", async ({ homePage }) => {
         await homePage.setMinimumAndMaxPriceRange(HomeData.InvalidPriceRange.Mini, HomeData.InvalidPriceRange.Max)
+        expect(await homePage.getErrorToastMsg()).toBe(HomeData.ErrorMessage)
     })
 
 })

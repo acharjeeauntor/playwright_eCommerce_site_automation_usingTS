@@ -51,7 +51,9 @@ export class WebActions {
 
    async getElementText(selector: string): Promise<string> {
   return await this.page.textContent(selector);
-    
+   }
+  async getLastElementText(selector: string): Promise<string> {
+return await this.page.locator(selector).last().textContent()
 }
 
 }
