@@ -7,5 +7,13 @@
         {
             "Product": "    "
         }
-    ]
+    ],
+    "ValidPriceRange":{
+        "Mini":"00",
+        "Max":"32500"
+    },
+    "InvalidPriceRange":{
+        "Mini":"00",
+        "Max":"0000"
+    }
 }

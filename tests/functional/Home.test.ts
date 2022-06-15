@@ -28,20 +28,20 @@ test.describe("Test Home page features", async () => {
 
     test("Verify Filter Search input is working properly or not for valid data", async ({ homePage }) => {
         await homePage.searchProduct(HomeData.ValidProductName)
-        
-    })
-
-    for(const data of HomeData.InvalidProductName)
-    test.only(`Verify Filter Search input is working properly or not for ${data.Product} product name`, async ({homePage}) => {
-        await homePage.searchProduct(data.Product)
-    })
-
-    test("Verify Price Range is working properly or not for valid data", async () => {
 
     })
 
-    test("Verify Price Range is working properly or not for invalid data", async () => {
+    for (const data of HomeData.InvalidProductName)
+        test(`Verify Filter Search input is working properly or not for ${data.Product} product name`, async ({ homePage }) => {
+            await homePage.searchProduct(data.Product)
+        })
 
+    test("Verify Price Range is working properly or not for valid data", async ({ homePage }) => {
+        await homePage.setMinimumAndMaxPriceRange(HomeData.ValidPriceRange.Mini, HomeData.ValidPriceRange.Max)
+    })
+
+    test("Verify Price Range is working properly or not for invalid data", async ({ homePage }) => {
+        await homePage.setMinimumAndMaxPriceRange(HomeData.InvalidPriceRange.Mini, HomeData.InvalidPriceRange.Max)
     })
 
 })
