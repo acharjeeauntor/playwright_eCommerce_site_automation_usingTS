@@ -16,6 +16,9 @@
             "@data/*": [
                 "testData/*"
             ],
+            "@utils/*": [
+                "utils/*"
+            ]
         }
     }
 }

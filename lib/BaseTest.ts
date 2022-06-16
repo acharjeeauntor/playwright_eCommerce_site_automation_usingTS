@@ -3,6 +3,8 @@ import { LoginPage } from "@pages/LoginPage"
 import { RegisterPage } from "@pages/RegisterPage"
 import {ForgetPassPage} from "@pages/ForgetPassPage"
 import {HomePage} from "@pages/HomePage"
+import {NavBar} from "@pages/NavBar"
+import {OrdersPage} from "@pages/OrdersPage"
 
 
 const test = baseTest.extend<{
@@ -10,6 +12,8 @@ const test = baseTest.extend<{
     registerPage: RegisterPage
     forgetPassPage:ForgetPassPage
     homePage:HomePage
+    navBar:NavBar
+    ordersPage:OrdersPage
 }>({
     loginPage: async ({ page }, use) => {
         await use(new LoginPage(page))
@@ -22,6 +26,12 @@ const test = baseTest.extend<{
     },
     homePage:async({page},use)=>{
         await use(new HomePage(page))
+    },
+    navBar:async({page},use)=>{
+        await use(new NavBar(page))
+    },
+    ordersPage:async({page},use)=>{
+        await use(new OrdersPage(page))
     }
 
 })
