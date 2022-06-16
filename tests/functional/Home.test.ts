@@ -28,9 +28,7 @@ test.describe("Test Home page features", async () => {
 
     test("Verify Filter Search input is working properly or not for valid data", async ({ homePage }) => {
         await homePage.searchProduct(HomeData.ValidProductName)
-        let product =await homePage.getProductName()
-        console.log(product)
-        expect(product.toLowerCase()).toContain(HomeData.ValidProductName)
+        expect((await homePage.getProductName()).toLowerCase()).toContain(HomeData.ValidProductName)
     })
 
     for (const data of HomeData.InvalidProductName){
@@ -41,9 +39,8 @@ test.describe("Test Home page features", async () => {
     }
 
 
-    test.only("Verify Price Range is working properly or not for valid data", async ({ homePage }) => {
+    test("Verify Price Range is working properly or not for valid data", async ({ homePage }) => {
         await homePage.setMinimumAndMaxPriceRange(HomeData.ValidPriceRange.Mini, HomeData.ValidPriceRange.Max)
-        //console.log(await homePage.getRangeProductName())
         expect(await homePage.getRangeProductName()).toContain(HomeData.ValidRangeProductName)
       
     })

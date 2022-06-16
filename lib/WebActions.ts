@@ -36,7 +36,7 @@ export class WebActions {
         await this.page.selectOption(selector, { value: value })
     }
     async checkElement(selector: string): Promise<void> {
-       // await this.waitForElementAttached(selector);
+        // await this.waitForElementAttached(selector);
         return this.page.check(selector);
     }
 
@@ -45,15 +45,15 @@ export class WebActions {
         return this.page.uncheck(selector);
     }
 
-   async getAttributeValue(selector:string,attributeName:string):Promise<string>{
-    return await this.page.getAttribute(selector,attributeName)
-   }
+    async getAttributeValue(selector: string, attributeName: string): Promise<string> {
+        return await this.page.getAttribute(selector, attributeName)
+    }
 
-   async getElementText(selector: string): Promise<string> {
-  return await this.page.textContent(selector);
-   }
-  async getLastElementText(selector: string): Promise<string> {
-return await this.page.locator(selector).last().textContent()
-}
+    async getElementText(selector: string): Promise<string> {
+        return await this.page.textContent(selector);
+    }
+    async getLastElementText(selector: string): Promise<string> {
+        return await this.page.locator(selector).last().textContent()
+    }
 
 }
