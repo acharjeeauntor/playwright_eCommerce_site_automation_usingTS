@@ -27,7 +27,7 @@ export class HomePage {
 
     async getErrorToastMsg(): Promise<string> {
         return (await webActions.getElementText(homePageObjects.ErrorMsg_Toast_Selector)).trim()
-      
+
     }
 
     async getProductName(): Promise<string> {
@@ -36,6 +36,19 @@ export class HomePage {
 
     async getRangeProductName(): Promise<string> {
         return (await webActions.getLastElementText(homePageObjects.Product_Name_Selector)).toLowerCase().trim()
+    }
+
+    async clickViewBtnofProductItem(pName:string): Promise<void> {
+        let products = this.page.locator(homePageObjects.Product_Item_Selector)
+        let productCount = await products.count()
+        for(let i =0;i<productCount;i++){
+            let productName = await products.nth(i).locator(homePageObjects.Product_Name_Selector).textContent()
+            if(productName===pName){
+                await products.nth(i).locator(homePageObjects.View_Btn_Selector).click()
+                break;
+            }
+        }
+
     }
 
 }

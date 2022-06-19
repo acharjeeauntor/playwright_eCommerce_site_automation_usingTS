@@ -1,9 +1,9 @@
 import {Page,request} from "@playwright/test"
 
 export class Common{
-    constructor(){
+    // constructor(){
 
-    }
+    // }
 
 
 async getLoginToken(mail:string,password:string):Promise<string>{

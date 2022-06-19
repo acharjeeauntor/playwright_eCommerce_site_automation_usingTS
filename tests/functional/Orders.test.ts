@@ -27,12 +27,12 @@ test.describe("Test Orders Page", async () => {
 
 
     test("No order text verification", async ({ navBar, page, ordersPage }) => {
-        await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/6298e803e26b7e1a10ecbba3", async route => {
-            const response = await page.request.fetch(route.request())
-            console.log(response)
+        await ordersPage.page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/6298e803e26b7e1a10ecbba3", async (route,request) => {
+            //const response = await ordersPage.page.request.fetch(route.request())
+            //console.log(response)
             let body = fakePayLoadOrders
             await route.fulfill({
-                response,
+                // response,
                 body,
             })
 
@@ -40,7 +40,7 @@ test.describe("Test Orders Page", async () => {
         })
 
         await navBar.clickOrdersBtn()
-        //await page.waitForResponse()
+        await page.waitForResponse("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/6298e803e26b7e1a10ecbba3")
         expect(await ordersPage.getNoOrderText()).toContain("You have No Orders to show at this time.")
 
 

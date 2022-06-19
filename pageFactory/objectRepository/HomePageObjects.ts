@@ -4,4 +4,6 @@ export class HomePageObjects{
     MaximumPrice_Input_Selector=`[formcontrolname='maxPrice']:visible`
     ErrorMsg_Toast_Selector = `#toast-container`
     Product_Name_Selector = `.card-body b`
+    Product_Item_Selector=`div .card`
+    View_Btn_Selector = `text=View`
     }

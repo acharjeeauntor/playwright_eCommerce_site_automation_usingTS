@@ -1,5 +1,5 @@
 import test from "@lib/BaseTest"
-import { HomePage } from "@pages/HomePage"
+// import { HomePage } from "pageFactory/pageRepository/HomePage"
 import HomeData from "@data/HomePageData.json"
 import LoginData from "@data/LoginData.json"
 import { expect, request } from "@playwright/test"
@@ -45,6 +45,8 @@ test.describe("Test Home page features", async () => {
         await homePage.setMinimumAndMaxPriceRange(HomeData.InvalidPriceRange.Mini, HomeData.InvalidPriceRange.Max)
         expect(await homePage.getErrorToastMsg()).toBe(HomeData.ErrorMessage)
     })
+
+
 
 })
 
