@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test EndToEndOrderProduct.test.ts --project=chrome",
-    "debug": "npx playwright test Home.test.ts --project=chrome --debug"
+    "debug": "npx playwright test EndToEndOrderProduct.test.ts --project=chrome --debug",
+    "codegen": "npx playwright codegen"
   },
   "keywords": [],
   "author": "",

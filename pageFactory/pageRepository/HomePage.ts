@@ -45,7 +45,7 @@ export class HomePage {
             let productName = await products.nth(i).locator(homePageObjects.Product_Name_Selector).textContent()
             if(productName===pName){
                 await products.nth(i).locator(homePageObjects.View_Btn_Selector).click()
-                break;
+                break
             }
         }
 

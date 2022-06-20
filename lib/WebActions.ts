@@ -56,4 +56,8 @@ export class WebActions {
         return await this.page.locator(selector).last().textContent()
     }
 
+    async getLocatorForSelector(selector:string){
+        return this.page.locator(selector)
+    }
+
 }

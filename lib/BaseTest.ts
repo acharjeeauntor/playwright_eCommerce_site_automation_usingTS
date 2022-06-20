@@ -6,6 +6,8 @@ import {HomePage} from "@pages/HomePage"
 import {NavBar} from "@pages/NavBar"
 import {OrdersPage} from "@pages/OrdersPage"
 import {ProductDetailsPage} from "@pages/ProductDetailsPage"
+import {CartPage} from "@pages/CartPage"
+import{PlaceOrderPage} from "@pages/PlaceOrderPage"
 
 
 const test = baseTest.extend<{
@@ -16,6 +18,8 @@ const test = baseTest.extend<{
     navBar:NavBar
     ordersPage:OrdersPage
     productDetailsPage:ProductDetailsPage
+    cartPage:CartPage
+    placeOrderPage:PlaceOrderPage
 }>({
     loginPage: async ({ page }, use) => {
         await use(new LoginPage(page))
@@ -37,6 +41,12 @@ const test = baseTest.extend<{
     },
     productDetailsPage:async({page},use)=>{
         await use(new  ProductDetailsPage(page))
+    },
+    cartPage:async({page},use)=>{
+        await use(new CartPage(page))
+    },
+    placeOrderPage:async({page},use)=>{
+        await use(new PlaceOrderPage(page))
     }
 
 })

@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test"
+import { Locator, Page } from "@playwright/test"
 import { WebActions } from "@lib/WebActions"
 import { ProductDetailsPageObjects } from "@objects/ProductDetailsPageObjects"
 
@@ -20,6 +20,10 @@ export class ProductDetailsPage {
 
     async getToastMsg():Promise<string>{
        return await webActions.getElementText(productDetailsPageObjects.Product_Add_To_Cart_Toast_Msg_Selector)
+    }
+
+    async getToastMsgLocator():Promise<any>{
+        return await webActions.getLocatorForSelector(productDetailsPageObjects.Product_Add_To_Cart_Toast_Msg_Selector)
     }
 
 

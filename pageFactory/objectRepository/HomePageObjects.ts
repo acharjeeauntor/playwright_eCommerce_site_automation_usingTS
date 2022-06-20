@@ -5,5 +5,5 @@ export class HomePageObjects{
     ErrorMsg_Toast_Selector = `#toast-container`
     Product_Name_Selector = `.card-body b`
     Product_Item_Selector=`div .card`
-    View_Btn_Selector = `text=View`
+    View_Btn_Selector = `button:has-text("View")`
     }
