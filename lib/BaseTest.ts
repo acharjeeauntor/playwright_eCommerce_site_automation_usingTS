@@ -1,11 +1,11 @@
 import { test as baseTest } from "@playwright/test"
-import { LoginPage } from "pageFactory/pageRepository/LoginPage"
-import { RegisterPage } from "pageFactory/pageRepository/RegisterPage"
-import {ForgetPassPage} from "pageFactory/pageRepository/ForgetPassPage"
-import {HomePage} from "pageFactory/pageRepository/HomePage"
-import {NavBar} from "pageFactory/pageRepository/NavBar"
-import {OrdersPage} from "pageFactory/pageRepository/OrdersPage"
-import {ProductDetailsPage} from "pageFactory/pageRepository/ProductDetailsPage"
+import { LoginPage } from "@pages/LoginPage"
+import { RegisterPage } from "@pages/RegisterPage"
+import {ForgetPassPage} from "@pages/ForgetPassPage"
+import {HomePage} from "@pages/HomePage"
+import {NavBar} from "@pages/NavBar"
+import {OrdersPage} from "@pages/OrdersPage"
+import {ProductDetailsPage} from "@pages/ProductDetailsPage"
 
 
 const test = baseTest.extend<{

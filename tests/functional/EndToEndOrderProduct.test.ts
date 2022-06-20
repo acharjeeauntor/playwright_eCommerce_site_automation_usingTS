@@ -18,9 +18,14 @@ test.describe("End to End Product Order test",async()=>{
         await homePage.page.goto("https://rahulshettyacademy.com/client")
     })
     test("Add to cart a product from product details and complete the order",async({homePage,productDetailsPage})=>{
-        await homePage.clickViewBtnofProductItem("zara coat")
+        await homePage.clickViewBtnofProductItem("zara coat 3")
         await productDetailsPage.clickAddToCartBtn()
-        await productDetailsPage.page.waitForResponse("https://rahulshettyacademy.com/api/ecom/user/add-to-cart")
-        await homePage.page.pause()
+        let response  = await productDetailsPage.page.waitForResponse("https://rahulshettyacademy.com/api/ecom/user/add-to-cart")
+        let responseJsonData = await response.json()
+        let responseMsg = await responseJsonData.message
+        console.log(await productDetailsPage.getToastMsg())
+        // expect(responseMsg).toBe()
+
+        //await homePage.page.pause()
     })
 })

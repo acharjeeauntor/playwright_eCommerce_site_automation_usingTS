@@ -18,6 +18,10 @@ export class ProductDetailsPage {
        await webActions.clickElement(productDetailsPageObjects.Add_TO_Cart_Btn_Selector)
     }
 
+    async getToastMsg():Promise<string>{
+       return await webActions.getElementText(productDetailsPageObjects.Product_Add_To_Cart_Toast_Msg_Selector)
+    }
+
 
 
 
