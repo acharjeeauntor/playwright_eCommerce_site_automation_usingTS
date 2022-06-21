@@ -18,7 +18,7 @@ const config: PlaywrightTestConfig = {
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 20000
+    timeout: 10000
   },
   //fullyParallel:true,
   //Global Setup to run before all tests
@@ -28,7 +28,7 @@ const config: PlaywrightTestConfig = {
   //globalTeardown: `./global-teardown`,
 
   //sets timeout for each test case
-  timeout: 120000,
+  timeout: 10000,
 
   //number of retries if test case fails
   retries: 0,
@@ -47,7 +47,7 @@ const config: PlaywrightTestConfig = {
         browserName: `chromium`,
         baseURL: testConfig[process.env.ENV],
         headless: !true,
-        viewport: { width: 1000, height: 650 },
+        viewport: { width: 1300, height: 620 },
         ignoreHTTPSErrors: true,
         acceptDownloads: true,
         screenshot: `only-on-failure`,

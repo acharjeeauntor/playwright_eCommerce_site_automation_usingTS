@@ -17,5 +17,6 @@
         "Mini":"00",
         "Max":"0000"
     },
-    "ErrorMessage":"No Products Found"
+    "ErrorMessage":"No Products Found",
+    "homePageUrl":"https://rahulshettyacademy.com/client/dashboard/dash"
 }

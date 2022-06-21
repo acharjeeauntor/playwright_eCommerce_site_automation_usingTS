@@ -6,4 +6,6 @@ export class HomePageObjects{
     Product_Name_Selector = `.card-body b`
     Product_Item_Selector=`div .card`
     View_Btn_Selector = `button:has-text("View")`
+    AddToCart_Btn_Selector = `button:has-text("Add To Cart")`
+    Product_Add_To_Cart_Toast_Msg_Selector=`#toast-container`   
     }

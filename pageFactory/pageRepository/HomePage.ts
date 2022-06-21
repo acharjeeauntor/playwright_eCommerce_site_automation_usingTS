@@ -51,4 +51,23 @@ export class HomePage {
 
     }
 
+
+    async clickAddToCartOfProduct(pName:string): Promise<void> {
+        let products = this.page.locator(homePageObjects.Product_Item_Selector)
+        let productCount = await products.count()
+        for(let i =0;i<productCount;i++){
+            let productName = await products.nth(i).locator(homePageObjects.Product_Name_Selector).textContent()
+            if(productName===pName){
+                await products.nth(i).locator(homePageObjects.AddToCart_Btn_Selector).click()
+                break
+            }
+        }
+
+    }
+    
+
+    async getToastMsgLocator():Promise<any>{
+        return await webActions.getLocatorForSelector(homePageObjects.Product_Add_To_Cart_Toast_Msg_Selector)
+    }
+
 }
