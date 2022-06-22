@@ -15,19 +15,24 @@ export class PlaceOrderPage {
     }
 
 
-    async selectCounty(country: string): Promise<void> {
-        // Click [placeholder="Select Country"]
-        await this.page.locator('[placeholder="Select Country"]').click();
-        // Fill [placeholder="Select Country"]
-        await this.page.locator('[placeholder="Select Country"]').fill('bangla');
-        // Click button:has-text("Bangladesh")
-        await this.page.locator('button:has-text("Bangladesh")').click();
-        // Click text=Place Order
-        await Promise.all([
-            this.page.waitForNavigation(/*{ url: 'https://rahulshettyacademy.com/client/dashboard/thanks?prop=%5B%2262b0b00de26b7e1a10ee5cd9%22%5D' }*/),
-            this.page.locator('text=Place Order').click()
-        ]);
-        await this.page.pause()
+    async selectCounty(): Promise<void> {
+        await this.page.locator("[placeholder*='Country']").type("ind",{delay:200});
+    const dropdown = this.page.locator(".ta-results");
+    await dropdown.waitFor();
+    let optionsCount = await dropdown.locator("button").count();
+    for(let i =0;i< optionsCount; ++i)
+    {
+        let text =  await dropdown.locator("button").nth(i).textContent();
+        if(text === " India")
+        {
+           await dropdown.locator("button").nth(i).click();
+           break;
+        }
+    }
+    }
+
+    async clickPlaceOderBtn():Promise<void>{
+        await webActions.clickElement(placeOrderPageObjects.Place_Order_Btn_Selector)
     }
 
 

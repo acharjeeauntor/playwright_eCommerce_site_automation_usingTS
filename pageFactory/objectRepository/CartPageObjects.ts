@@ -5,4 +5,6 @@ export class CartPageObjects{
     Delete_Btn_Selector=`.btn-danger`
     No_Cart_Test_Selector=`h1:has-text("No Products in Your Cart !")`
     ContinueShopping_Btn_Selector=`[type="button"][routerlink="/dashboard"]`
+    Product_Price_Selector=`.prodTotal p`
+    Checkout_Btn_Selector=`button:has-text("Checkout")`
 }

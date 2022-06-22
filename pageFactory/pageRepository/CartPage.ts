@@ -61,5 +61,22 @@ export class CartPage {
         await webActions.clickElement(cartPageObjects.ContinueShopping_Btn_Selector)
     }
 
+    async getTotalPriceOfProduct(): Promise<number> {
+        let priceWithCurrency = this.page.locator(cartPageObjects.Product_Price_Selector)
+        let prodCount = await priceWithCurrency.count()
+        let priceCount:number=0
+
+        for (var i = 0; i < prodCount; i++) {
+         let price=(await priceWithCurrency.nth(i).textContent()).split("$")[1].trim()
+         priceCount=priceCount+ parseInt(price) 
+        }
+
+        return priceCount
+    }
+
+    async clickCheckoutBtn(): Promise<void> {
+        await webActions.clickElement(cartPageObjects.Checkout_Btn_Selector)
+    }
+
 
 }

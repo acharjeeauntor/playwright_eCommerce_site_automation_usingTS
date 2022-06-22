@@ -26,5 +26,9 @@ export class NavBar {
         await webActions.clickElement(navBarObjects.Cart_Btn_Selector)
     }
 
+    async getCartLabelCount():Promise<string>{
+        await webActions.waitForElementAttached(navBarObjects.Cart_Label_Selector)
+        return await webActions.getElementText(navBarObjects.Cart_Label_Selector)
+    }
 
 }
