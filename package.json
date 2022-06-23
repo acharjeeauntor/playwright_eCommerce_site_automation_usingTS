@@ -4,9 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test EndToEndOrderProduct.test.ts --project=chrome",
-    "debug": "npx playwright test EndToEndOrderProduct.test.ts --project=chrome --debug",
-    "codegen": "npx playwright codegen"
+    "test": "npx playwright test --project=Chrome --workers=1",
+    "test:smoke": "npx playwright test --project=Smoke",
+    "headed": "npx playwright test --headed --reporter=list",
+    "debug": "npx playwright test --debug",
+    "test:single": "npx playwright test MultiSelect.test.ts --project=Firefox",
+    "test:parallel": "npx playwright test --grep @Smoke --project=Chrome",
+    "test:serial": "npx playwright test --grep @Smoke --workers=1 --project=Chrome",
+    "test:functional": "npx playwright test --project=Functional --workers=4",
+    "test:api": "npx playwright test --project=API",
+    "test:db": "npx playwright test DB.test.ts --project=DB",
+    "test:record": "npx playwright codegen",
+    "test:visual": "npx playwright test --grep @Visual --project=Chrome",
+    "test:visualUpdate": "npx playwright test AlertPageComparision.test.ts --update-snapshots --project=Chrome",
+    "test:device": "npx playwright test Emulation.test.ts --project=Device",
+    "allureReport": "allure serve"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +27,12 @@
     "@playwright/test": "^1.22.2"
   },
   "dependencies": {
+    "@types/adm-zip": "^0.4.34",
+    "adm-zip": "^0.5.9",
+    "allure-playwright": "^2.0.0-beta.17",
     "cross-env": "^7.0.3",
     "edit-json-file": "^1.7.0",
+    "rimraf": "^3.0.2",
     "typescript": "^4.7.3"
   }
 }

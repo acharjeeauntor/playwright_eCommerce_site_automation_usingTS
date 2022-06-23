@@ -77,7 +77,7 @@ test.describe("Test Forget Password feature", async () => {
 
 //
 
-        expect(await forgetPassPage.getErrorOrSuccessToastMsg()).not.toContain(ForgetPassData.PassChangedSuccessMessage)
+        expect((await forgetPassPage.getErrorOrSuccessToastMsg()).trim()).not.toContain(ForgetPassData.PassChangedSuccessMessage)
 
     })
 })

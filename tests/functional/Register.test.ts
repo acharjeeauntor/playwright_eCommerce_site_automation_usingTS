@@ -60,7 +60,7 @@ test.describe("Test Register feature", async () => {
             await registerPage.enterConfirmPassword(data.ConfirmPass)
             await registerPage.checkRequiredCheckbox()
             await registerPage.clickRegisterConfirmBtn()
-            expect(await registerPage.getErrorOrSuccessToastMsg()).not.toContain(RegisterData.RegisterSuccessMessage)
+            expect((await registerPage.getErrorOrSuccessToastMsg()).trim()).not.toContain(RegisterData.RegisterSuccessMessage)
 
         })
     }

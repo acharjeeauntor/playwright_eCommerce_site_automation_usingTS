@@ -21,22 +21,21 @@ const config: PlaywrightTestConfig = {
     timeout: 10000
   },
   //fullyParallel:true,
-  //Global Setup to run before all tests
-  //globalSetup: `./global-setup`,
+  // Global Setup to run before all tests
+  globalSetup: `./global-setup`,
 
-  //Global Teardown to run after all tests
-  //globalTeardown: `./global-teardown`,
+  // Global Teardown to run after all tests
+  globalTeardown: `./global-teardown`,
 
   //sets timeout for each test case
   timeout: 10000,
 
   //number of retries if test case fails
-  retries: 0,
+  retries: 1,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 
-  // reporter: [[`./CustomReporterConfig.ts`], ['list'], [`allure-playwright`], [`html`, { outputFolder: 'html-report', open: 'never' }]],
-  reporter: [ [`html`, { outputFolder: 'html-report', open: 'never' }]],
+  reporter: [['list'], [`html`, { outputFolder: 'html-report', open: 'never' }]],
 
   /* Configure projects for major browsers */
   projects: [

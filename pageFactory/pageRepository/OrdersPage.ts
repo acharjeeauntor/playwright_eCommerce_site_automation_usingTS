@@ -14,8 +14,12 @@ export class OrdersPage {
         ordersPageObjects = new OrdersPageObjects()
     }
 
-    async getNoOrderText(): Promise<string> {
-        return await webActions.getElementText(ordersPageObjects.No_Order_text_Selector)
+    async getUnAuthOrderText(): Promise<string> {
+        return await webActions.getElementText(ordersPageObjects.UnAuth_Msg_Text_Selector)
+    }
+
+    async clickViewBtn(): Promise<void> {
+        await webActions.clickElement(ordersPageObjects.View_Btn_Selector)
     }
 
 

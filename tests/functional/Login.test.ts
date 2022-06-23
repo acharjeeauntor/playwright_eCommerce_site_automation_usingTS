@@ -9,7 +9,7 @@ test.describe("Login Feature Test",async()=>{
     })
 
 
-    test.only('Verify user can login to the application using valid credential', async ({ loginPage }) => {
+    test('Verify user can login to the application using valid credential', async ({ loginPage }) => {
        
         await loginPage.enterEmail(LoginData.ValidLoginData.Email)
         await loginPage.enterPassword(LoginData.ValidLoginData.Password)

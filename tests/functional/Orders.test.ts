@@ -1,12 +1,12 @@
 import { expect } from "@playwright/test"
 import test from "@lib/BaseTest"
 import LoginData from "@data/LoginData.json"
+import OrderPageData from "@data/OrdersPageData.json"
 import { Common } from "@utils/Common"
 
 
 let common: Common
 let token: string
-const fakePayLoadOrders: any = { data: [], message: "No Orders" };
 
 common = new Common()
 
@@ -26,24 +26,15 @@ test.describe("Test Orders Page", async () => {
     })
 
 
-    test("No order text verification", async ({ navBar, page, ordersPage }) => {
-        await ordersPage.page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/6298e803e26b7e1a10ecbba3", async (route,request) => {
-            //const response = await ordersPage.page.request.fetch(route.request())
-            //console.log(response)
-            let body = fakePayLoadOrders
-            await route.fulfill({
-                // response,
-                body,
-            })
-
-            console.log(route)
-        })
-
+    test("Unauthorized user accessed related message test", async ({ordersPage,navBar }) => {
+     
         await navBar.clickOrdersBtn()
-        await page.waitForResponse("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/6298e803e26b7e1a10ecbba3")
-        expect(await ordersPage.getNoOrderText()).toContain("You have No Orders to show at this time.")
-
-
+      
+        await ordersPage.page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=62b44749e26b7e1a10eea3ec",
+          route => route.continue({ url: 'https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=62b48b7ae26b7e1a10eeaae8' })
+        )
+        await ordersPage.clickViewBtn()
+       expect(await ordersPage.getUnAuthOrderText()).toContain(OrderPageData.UnAuthText)
 
     })
 
