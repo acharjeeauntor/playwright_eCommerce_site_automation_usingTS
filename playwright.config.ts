@@ -35,7 +35,7 @@ const config: PlaywrightTestConfig = {
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 
-  reporter: [['list'], [`html`, { outputFolder: 'html-report', open: 'never' }]],
+  reporter: [['list'],[`html`, { outputFolder: 'html-report', open: 'never' }]],
 
   /* Configure projects for major browsers */
   projects: [
@@ -45,7 +45,7 @@ const config: PlaywrightTestConfig = {
       use: {
         browserName: `chromium`,
         baseURL: testConfig[process.env.ENV],
-        headless: !true,
+        headless: true,
         viewport: { width: 1300, height: 620 },
         ignoreHTTPSErrors: true,
         acceptDownloads: true,
