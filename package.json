@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --project=Chrome --workers=1",
+    "test": "npx playwright test --project=Chrome --workers=2",
     "headed": "npx playwright test --headed --reporter=list",
     "debug": "npx playwright test --debug",
     "singleTest": "npx playwright test Orders.test.ts --project=chrome",
