@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main, master ]
 jobs:
-  functional_test:
+  Functional_Test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -19,6 +19,8 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx cross-env ENV=functional npm run singleTest
+    - name: Run Playwright tests
+      run: npx cross-env ENV=functional npm run endToEndTest
     - uses: actions/upload-artifact@v2
       if: always()
       with:
