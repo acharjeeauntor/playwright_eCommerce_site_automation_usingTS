@@ -1,6 +1,6 @@
 # playwright_eCommerce_site_automation
 
-Automation [https://letcode.in/](https://rahulshettyacademy.com/client/) using playwright,POM pattern
+Automation [https://rahulshettyacademy.com](https://rahulshettyacademy.com/client/) using playwright,POM pattern
 -----------------------------------------------------------
 ## Technology: <br>
 * Automation Framework: Playwright <br>
@@ -22,7 +22,7 @@ Automation [https://letcode.in/](https://rahulshettyacademy.com/client/) using p
 ----------------------------------------------------------
 
 ## Requirement:<br>
-1. Automate [https://letcode.in/test](https://rahulshettyacademy.com/client/) UI
+1. Automate [https://rahulshettyacademy.com](https://rahulshettyacademy.com/client/) UI
 
 ----------------------------------------------------------
 
